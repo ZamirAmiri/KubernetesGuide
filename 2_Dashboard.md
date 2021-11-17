@@ -43,4 +43,4 @@ Copy the content of the `Token:` attribute and paste it to login.
 
 
 ##Next step
-Install Ingress
+Install Dashboard

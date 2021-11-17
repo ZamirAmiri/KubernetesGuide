@@ -132,7 +132,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 Add the export also in /etc/profile so it can be loaded in case your machine restarts.
 ```
-source /etc/profiles
+source /etc/bash.bashrc
 ```
 
 ##Step 6 install calico
