@@ -76,6 +76,6 @@ echo "Building version $1!"
 cd webapp
 yarn build 
 $TAGNAME = develop 
-docker build ./webapp -t REPO:$TAGNAME
-docker push REPO:$TAGNAME
+docker build ./webapp -t zamiramiri5/kubernetesguide-webapp:$TAGNAME
+docker push zamiramiri5/kubernetesguide-webapp:$TAGNAME
 ```
