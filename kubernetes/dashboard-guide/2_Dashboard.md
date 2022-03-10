@@ -37,10 +37,10 @@ kubectl get secrets -n kubernetes-dashboard
 ```
 Show the token on screen using:
 ```
-kubectl describe secret admin-user-token-{id} -n kubernetes-dashboard
+kubectl describe secret admin-user-token -n kubernetes-dashboard
 ```
 Copy the content of the `Token:` attribute and paste it to login.
 
 
 ##Next step
-Install Dashboard
+Install Ingress

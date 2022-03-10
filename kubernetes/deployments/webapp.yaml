@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-fr
+  namespace: default
+  labels: 
+    app: webapp-fr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-fr
+  template:
+    metadata:
+      labels:
+        app: webapp-fr
+    spec:
+      containers:
+      - name: webapp-fr
+        image: zamiramiri5/kubernetesguide-webapp:develop
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-fr-service
+  namespace: default
+spec:
+  selector:
+    app: webapp-fr
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
