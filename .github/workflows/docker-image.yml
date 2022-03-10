@@ -30,7 +30,7 @@ jobs:
           file: ./Dockerfile
           tags: zamiramiri5/kubernetesguide-webapp:develop
           # build on feature branches, push only on main branch
-          push: ${{github.ref == 'refs/heads/develop' }}
+          push: true
       
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
