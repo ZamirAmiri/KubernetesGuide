@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webapp-fr
-        image: zamiramiri5/corporatecarpooling-webapp:develop
+        image: zamiramiri5/kubernetesguide-webapp:develop
         imagePullPolicy: Always
         resources:
           limits:
