@@ -26,12 +26,12 @@ Make sure that the br_netfilter module is loaded. This can be done by running ls
 ```
 sudo modprobe br_netfilter
 ```
+Then run these commands:
 ```
     cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
     br_netfilter
     EOF
-```
-```
+
     cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
     net.bridge.bridge-nf-call-ip6tables = 1
     net.bridge.bridge-nf-call-iptables = 1
@@ -124,7 +124,7 @@ Use the following command on a master node to create a token and print the join 
 Replace MASTERNODE_IP with your IP address
 [Note:] The podnetwork added is for Calico
 ```
-kubeadm init --apiserver-advertise-address=MASTERNODE_IP --control-plane-endpoint=MASTERNODE_IP --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=$MASTERNODE_IP --control-plane-endpoint=$MASTERNODE_IP --pod-network-cidr=192.168.0.0/16
 ```
 Make sure to export KUBECONFIG.
 ```
