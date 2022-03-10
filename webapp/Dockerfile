@@ -4,6 +4,7 @@ COPY package.json yarn.lock ./
 RUN yarn
 COPY . ./
 RUN yarn build
+RUN pwd
 
 FROM nginx:latest
 COPY ./webapp/build/ /usr/share/nginx/html
