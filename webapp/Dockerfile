@@ -6,4 +6,4 @@ COPY . ./
 RUN yarn build
 
 FROM nginx:latest
-COPY build/ /usr/share/nginx/html
+COPY ./webapp/build/ /usr/share/nginx/html
