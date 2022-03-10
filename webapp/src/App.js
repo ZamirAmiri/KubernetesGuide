@@ -17,7 +17,6 @@ function App() {
         >
           Learn React
         </a>
-        <p>This app is built with TypeScript</p>
       </header>
     </div>
   );
