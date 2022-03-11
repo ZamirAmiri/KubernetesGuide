@@ -1,4 +1,4 @@
-FROM node:8.16 as build-deps
+FROM node:16.14 as build-stage
 RUN mkdir /usr/src/app
 COPY . /usr/src/app
 WORKDIR /usr/src/app
@@ -8,5 +8,4 @@ RUN yarn build
 
 FROM nginx:latest
 WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
-COPY /usr/src/app/build .
+COPY --from=build-stage /usr/src/app/build .
