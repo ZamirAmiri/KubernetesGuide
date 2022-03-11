@@ -7,4 +7,6 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 RUN yarn build
 
 FROM nginx:latest
-COPY build/ /usr/share/nginx/html
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=build-stage /usr/src/app/build .
