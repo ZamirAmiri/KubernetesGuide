@@ -25,4 +25,4 @@ jobs:
       - name: Build image and push to Docker Hub
         run: docker build ./webapp -t zamiramiri5/kubernetesguide-webapp:develop
       - name: Push image
-        run: docker push
+        run: docker push zamiramiri5/kubernetesguide-webapp:develop
