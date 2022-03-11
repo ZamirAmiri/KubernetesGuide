@@ -1,9 +1,10 @@
 FROM node:8.16 as build-deps
-WORKDIR /usr/src/app
-COPY package.json yarn.lock ./
-RUN yarn
-RUN yarn build
+RUN mkdir /usr/src/app
 COPY . ./
+WORKDIR /usr/src/app
+RUN yarn
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
+RUN yarn build
 
 FROM nginx:latest
-COPY ./build/ /usr/share/nginx/html
+COPY build/ /usr/share/nginx/html
