@@ -3,7 +3,7 @@ WORKDIR /app
 COPY webapp/package*.json /app/
 RUN yarn
 COPY ./ /app/
-RUN yarn build
+RUN npm run build
 
 FROM nginx:latest
 COPY --from=build-stage /app/build/ /usr/share/nginx/html
