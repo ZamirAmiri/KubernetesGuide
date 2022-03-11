@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json /app/
 RUN yarn
 COPY ./ /app/
+RUN chown root:root /app/
 RUN yarn build
 
 FROM nginx:latest
