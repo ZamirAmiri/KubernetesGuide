@@ -9,4 +9,4 @@ RUN yarn build
 FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
-COPY --from=build-stage /usr/src/app/build .
+COPY /usr/src/app/build .
