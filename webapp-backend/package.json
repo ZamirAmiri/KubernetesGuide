@@ -1,0 +1,35 @@
+{
+  "name": "webapp-backend",
+  "version": "1.0.0",
+  "description": "Backend build for the Kubernetes Guide webapp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZamirAmiri/KubernetesInstallationGuide.git"
+  },
+  "keywords": [
+    "Kubernetes",
+    "Guide",
+    "Tutorial",
+    "How",
+    "To",
+    "Scalable",
+    "web",
+    "app",
+    "NodeJs",
+    "Express"
+  ],
+  "author": "ZamirAmiri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZamirAmiri/KubernetesInstallationGuide/issues"
+  },
+  "homepage": "https://github.com/ZamirAmiri/KubernetesInstallationGuide#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}

@@ -17,7 +17,12 @@ jobs:
           username: ${{secrets.DOCKERHUB_USERNAME}}
           password: ${{secrets.DOCKERHUB_TOKEN}}
       
-      - name: Build nodeJs image
-        run: docker build ./webapp -t zamiramiri5/kubernetesguide-webapp:develop
-      - name: Push image
-        run: docker push zamiramiri5/kubernetesguide-webapp:develop
+      - name: Build   webapp  image
+        run:  docker  build   ./webapp -t zamiramiri5/kubernetesguide-webapp:develop
+      - name: Push    webapp  image
+        run:  docker  push    zamiramiri5/kubernetesguide-webapp:develop
+      - name: Build   webapp-backend  image
+        run:  docker  build   ./webapp-backend -t zamiramiri5/kubernetesguide-webapp-backend:develop
+      - name: Push    webapp-backend  image
+        run:  docker  push    zamiramiri5/kubernetesguide-webapp-backend:develop
+
