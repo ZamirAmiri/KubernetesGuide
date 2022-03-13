@@ -16,7 +16,7 @@ spec:
                 name: webapp-fr-service
                 port:
                   number: 80
-          - path: /rest/api/v1
+          - path: /rest/api/v1(/|$)(.*)
             pathType: Prefix
             backend:
               service:
