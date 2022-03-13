@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-backend
+  namespace: default
+  labels: 
+    app: webapp-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-backend
+  template:
+    metadata:
+      labels:
+        app: webapp-backend
+    spec:
+      containers:
+      - name: webapp-backend
+        image: zamiramiri5/kubernetesguide-webapp-backend:develop
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-backend-service
+  namespace: default
+spec:
+  selector:
+    app: webapp-backend
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
