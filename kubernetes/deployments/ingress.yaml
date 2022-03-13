@@ -2,6 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-webhosting
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: "serviceName=webapp-fr-service rewrite=/; serviceName"
 spec:
   ingressClassName: nginx
   rules:
@@ -15,6 +17,7 @@ spec:
                 port:
                   number: 80
           - path: /rest/api/v1
+            pathType: Prefix
             backend:
               service:
                 name: webapp-backend-service
