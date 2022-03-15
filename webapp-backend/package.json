@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.tsx"
+    "start": "node index.tsx"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/ZamirAmiri/KubernetesInstallationGuide#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3"
   }
 }
